@@ -50,13 +50,16 @@ export default function WaitlistForm() {
     setIsLoading(true);
     setFirstName(data.firstName);
     try {
-      const response = await fetch("http://localhost:5555/api/v1/waitlist", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+      const response = await fetch(
+        "https://businex-backend-vexf.onrender.com/api/v1/waitlist",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
 
       if (!response.ok) {
         throw new Error("Something went wrong");
